@@ -8,7 +8,7 @@ user_group_map = {
                  }
 
 # Attach AWS-managed policies
-group_managed_policies = {
+group_managed_policy = {
   devops      = "arn:aws:iam::aws:policy/PowerUserAccess"
   admin      = "arn:aws:iam::aws:policy/AdministratorAccess"
   dev        = "arn:aws:iam::aws:policy/SecurityAudit"
