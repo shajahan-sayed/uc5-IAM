@@ -36,7 +36,7 @@ resource "aws_iam_user_group_membership" "user_membership" {
 resource "aws_iam_user_group_membership" "user_membership1" {
    user = var.user1
    groups = [
-        aws_iam_group.groups["var.group1].name
+        aws_iam_group.groups[var.group1].name
    ]
 }
 
