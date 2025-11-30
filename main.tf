@@ -13,14 +13,12 @@ resource "aws_iam_user" "users" {
    for_each = tosset(var.iam_users)
    name = each.key 
    force_destroy = true
-} user   = "alice"
-  groups = ["admins"]
 }
 
 
 resource "aws_iam_user" "user1" {
    name = var.user1
-   force_destroy - true
+   force_destroy = true
 }
 
 #attach users to groups
@@ -28,7 +26,7 @@ resource "aws_iam_user" "user1" {
 resource "aws_iam_user_group_membership" "user_membership" {
     for_each = var.user_group_map
 
-    user = eack.key
+    user = each.key
 
     groups = [
     aws_iam_group.groups[each.value].name
