@@ -1,6 +1,6 @@
 #creating groups in 2 method ( with for each and  manually)
 resource "aws_iam_group" "groups" {
-   for_each = tosset(var.iam_groups)
+   for_each = toset(var.iam_groups)
    name = each.key
 }
 resource "aws_iam_group" "group1" {
@@ -10,7 +10,7 @@ resource "aws_iam_group" "group1" {
 #creating users in 2 ways ( with for each and manually)
 
 resource "aws_iam_user" "users" {
-   for_each = tosset(var.iam_users)
+   for_each = toset(var.iam_users)
    name = each.key 
    force_destroy = true
 }
@@ -36,7 +36,7 @@ resource "aws_iam_user_group_membership" "user_membership" {
 resource "aws_iam_user_group_membership" "user_membership1" {
    user = var.user1
    groups = [
-        aws_iam_group.groups[var.group1].name
+        aws_iam_group.group1.name
    ]
 }
 
