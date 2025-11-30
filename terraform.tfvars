@@ -14,7 +14,7 @@ group_managed_policies = {
   dev        = "arn:aws:iam::aws:policy/SecurityAudit"
 }
 
-group1 = "group"
+group1 = "dataengineer"
 user1  = "shaju"
 
                 
