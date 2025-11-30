@@ -48,7 +48,7 @@ resource "aws_iam_group_policy_attachment" "policy" {
 }
 
 resource "aws_iam_group_policy_attachment" "policy1" {
-    group      = aws_iam_group.group1["var.group1"].name
+    group      = aws_iam_group.group1.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
