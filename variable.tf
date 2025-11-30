@@ -12,9 +12,11 @@ variable "iam_groups" {
 }
 variable "group1" {
   type = string
+  default = "dataenginer"
 }
 variable "user1" {
   type = string
+  default = "shaju"
 }
 
 variable "user_group_map" {
@@ -22,4 +24,9 @@ variable "user_group_map" {
 }
 variable "group_managed_policy" {
   type = map(string)
+  default = {
+    Dev      = "arn:aws:iam::aws:policy/PowerUserAccess"
+    Ops      = "arn:aws:iam::aws:policy/AdministratorAccess"
+    Security = "arn:aws:iam::aws:policy/SecurityAudit"
+  }
 }
